@@ -2,9 +2,9 @@ var meni = [
     { text: 'Home', link: '#hero' },
     { text: 'Service', link: '#service' },
     { text: 'Featured Cars', link: '#featured-cars' },
-	{ text: 'Newest Cars', link: '#new-cars' },  
+	  { text: 'Newest Cars', link: '#new-cars' },  
     { text: 'Contact', link: '#contact' },
-	{ text: 'Author', link: '#author' }
+	  { text: 'Author', link: '#author' }
   ];
   
   
@@ -62,9 +62,7 @@ var meni = [
   });
   
 
-
 var pocetnaCover=['assets/img/slider.jpg','assets/img/slider2.jpg','assets/img/slider3.jpg'];
-
 var currentImageIndex = 0;
 
 function menjaj() {
@@ -198,90 +196,6 @@ function initializeFeaturedCars() {
     });
 }
 
-initializeFeaturedCars();
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const testimonials = [
-        {
-            name: 'John T',
-            location: 'new york',
-            imageSrc: 'assets/img/john.png',
-            comment: 'DriveMotive delivered exceptional service. Their commitment to customer satisfaction and a diverse range of cars made my purchase enjoyable and hassle-free.'
-        },
-        {
-            name: 'Sophie R',
-            location: 'london',
-            imageSrc: 'assets/img/sophie.png',
-            comment: 'DriveMotive exceeded expectations. Their knowledgeable team guided me to the perfect vehicle. Smooth transaction, top-notch service, and a happy customer!'
-        },
-        {
-            name: 'Alex B',
-            location: 'washington',
-            imageSrc: 'assets/img/alex.png',
-            comment: 'Impressed by DriveMotive`s professionalism. Found the ideal car at a fair price. The entire process, from selection to purchase, was seamless and enjoyable.'
-        }
-    ];
-
-    const testimonialCarousel = document.getElementById('testimonial-carousel');
-
-    testimonials.forEach(testimonial => {
-        const testimonialHTML = `
-            <div class="col-sm-4 col-xs-12 px-3">
-                <div class="single-testimonial-box">
-                    <div class="testimonial-description">
-                        <div class="testimonial-info">
-                            <div class="testimonial-img">
-                                <img src="${testimonial.imageSrc}" alt="image of clients person" />
-                            </div><!--/.testimonial-img-->
-                        </div><!--/.testimonial-info-->
-                        <div class="testimonial-comment">
-                            <p>${testimonial.comment}</p>
-                        </div><!--/.testimonial-comment-->
-                        <div class="testimonial-person">
-                            <h2><a href="#">${testimonial.name}</a></h2>
-                            <h4>${testimonial.location}</h4>
-                        </div><!--/.testimonial-person-->
-                    </div><!--/.testimonial-description-->
-                </div><!--/.single-testimonial-box-->
-            </div><!--/.col-->
-        `;
-
-        testimonialCarousel.innerHTML += testimonialHTML;
-    });
-
-    var owl=$('#testimonial-carousel');
-        owl.owlCarousel({
-            items:3,
-            margin:0,
-            
-            loop:true,
-            autoplay:true,
-            smartSpeed:1000,
-            
-            
-            dots:false,
-            autoplayHoverPause:false,
-        
-            responsiveClass:true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    640:{
-                        items:2
-                    },
-                    992:{
-                        items:3
-                    }
-                }
-            
-            
-        });
-});
-
 
 let nizNovihauta = document.querySelectorAll("#newCars .row.g-0");
 let nAutaObj = [];
@@ -345,14 +259,96 @@ $(document).ready(function(){
 });
 
 
+initializeFeaturedCars();
+
+document.addEventListener('DOMContentLoaded', function () {
+    const klijenti = [
+        {
+            name: 'John T',
+            location: 'new york',
+            imageSrc: 'assets/img/john.png',
+            comment: 'DriveMotive delivered exceptional service. Their commitment to customer satisfaction and a diverse range of cars made my purchase enjoyable and hassle-free.'
+        },
+        {
+            name: 'Sophie R',
+            location: 'london',
+            imageSrc: 'assets/img/sophie.png',
+            comment: 'DriveMotive exceeded expectations. Their knowledgeable team guided me to the perfect vehicle. Smooth transaction, top-notch service, and a happy customer!'
+        },
+        {
+            name: 'Alex B',
+            location: 'washington',
+            imageSrc: 'assets/img/alex.png',
+            comment: 'Impressed by DriveMotive`s professionalism. Found the ideal car at a fair price. The entire process, from selection to purchase, was seamless and enjoyable.'
+        }
+    ];
+
+    const klijentiCarousel = document.getElementById('testimonial-carousel');
+
+    klijenti.forEach(klijenti => {
+        const klijentiHTML = `
+            <div class="col-sm-4 col-xs-12 px-3">
+                <div class="single-testimonial-box">
+                    <div class="testimonial-description">
+                        <div class="testimonial-info">
+                            <div class="testimonial-img">
+                                <img src="${klijenti.imageSrc}" alt="image of clients person" />
+                            </div>
+                        </div>
+                        <div class="testimonial-comment">
+                            <p>${klijenti.comment}</p>
+                        </div>
+                        <div class="testimonial-person">
+                            <h2><a href="#">${klijenti.name}</a></h2>
+                            <h4>${klijenti.location}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        klijentiCarousel.innerHTML += klijentiHTML;
+    });
+
+    var owl=$('#testimonial-carousel');
+        owl.owlCarousel({
+            items:3,
+            margin:0,
+            
+            loop:true,
+            autoplay:true,
+            smartSpeed:1000,
+            
+            
+            dots:false,
+            autoplayHoverPause:false,
+        
+            responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    640:{
+                        items:2
+                    },
+                    992:{
+                        items:3
+                    }
+                }
+            
+            
+        });
+});
+
+
 let nizRb = document.querySelectorAll('input[name="kupac"]');
 
 function validateForm() {
   let form = document.forms['contactForm'];
   let passed = true;
 
+  let nameRegex = new RegExp(/^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,19})+$/);
   let emailRegex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
-  let nameRegex = new RegExp(/^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,14}(\s[A-ZČĆŽŠĐ][a-zčćžšđ]{2,19})+$/);
   
   let selectedkupac = form['kupac'].value;
 
@@ -393,11 +389,6 @@ function validateForm() {
         document.getElementById('productError').style.display = 'none';
     }
  
-   
-  
-  
-
-
 let checkboxes = document.querySelectorAll('#cuvaj input[type="checkbox"]');
 let checked = Array.from(checkboxes).some(checkbox => checkbox.checked);
 
@@ -417,13 +408,12 @@ var nameMessage = '';
 if (form['name'].value === '') {
   nameMessage = "Please fill out this field!";
 } else if (!nameRegex.test(form['name'].value)) {
-  nameMessage = "Niste dobro uneli ime i prezime : (Luka Antić)";
+  nameMessage = "You did not enter the first and last name correctly: (Luka Antic)";
 }
 if (nameMessage) {
   showError(form['name'], nameMessage);
   passed = false;
 }
-
 
   var emailMessage = '';
   if (form['email'].value === '') {
@@ -446,20 +436,16 @@ if (nameMessage) {
         rb.checked = false;
         });
     
-        document.querySelector("#brojSlova").textContent = '0/150';
+        document.querySelector("#brojSlova").textContent = '0/200';
         
         nizRb.forEach(rb => {
           rb.checked = false;
         });
-      
-        
-        
-  
-    
+          
         checkboxes.forEach(checkbox => checkbox.checked = false);
     
         document.querySelector("#komentar").value = '';
-        document.querySelector("#brojSlova").textContent = '0/150';
+        document.querySelector("#brojSlova").textContent = '0/200';
     
         form.querySelector("#ddlUsluga").value = '0';
     
@@ -471,10 +457,9 @@ if (nameMessage) {
     }
 
 document.querySelector("#komentar").addEventListener("keyup", function () {
-    document.querySelector("#brojSlova").textContent = `${document.querySelector("#komentar").value.length}/150`;
+    document.querySelector("#brojSlova").textContent = `${document.querySelector("#komentar").value.length}/200`;
     
 });
-
 
 document.getElementById("ddlUsluga").addEventListener("change", function () {
     prikazCheckBoxova(parseInt(this.value));
@@ -484,7 +469,6 @@ function handleIzborUsluge(selectElement) {
     let izabranaVrednost = parseInt(selectElement.value);
     prikazCheckBoxova(izabranaVrednost);
 }
-
 
 function prikazCheckBoxova(pom) {
     let cuvaj = document.getElementById("cuvaj");
@@ -558,4 +542,3 @@ function prikazCheckBoxova(pom) {
         }
     }
 }
-

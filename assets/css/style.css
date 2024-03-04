@@ -1,7 +1,48 @@
-  /*--------------------------------------------------------------
-  # Disable AOS delay on mobile
-  --------------------------------------------------------------*/
-  @media screen and (max-width: 768px) {
+*{
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-o-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+body{
+font-family: 'Poppins', sans-serif;
+font-size:16px;
+color:#818998;
+  text-transform:initial;
+  max-width:1920px;
+  margin:0 auto;
+overflow-x:hidden;
+}
+
+h1,h2,h3,h4,h5,h6 { 
+margin: 0;
+color:#444a57;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+p {
+margin: 0;
+color:#818998;
+font-size:16px;
+  line-height: 1.8;
+  text-transform: initial;
+}
+img{border:none;max-width:100%; height:auto;}
+ul{
+padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+ul li {
+list-style: none;
+  display: inline-block;
+
+}
+ @media screen and (max-width: 768px) {
     [data-aos-delay] {
       transition-delay: 0 !important;
     }
@@ -20,9 +61,12 @@
   .form-group input{
     outline: 0 !important;
     box-shadow: none;
-    border: 1px solid #f8f8f8;
-    background: #f8f8f8;
+    border: 1px solid #eaeaea;
+    background: #eaeaea;
     height: 60px;
+  }
+  textarea{
+    background: #eaeaea !important;
   }
   .form-group input[type="checkbox"]{
     height: 20px;
@@ -58,9 +102,6 @@
     padding: 0;
     margin: 0;
   }
-  /* #header.header-transparent {
-    background: transparent;
-  } */
   #header.header-scrolled {
     background: rgba(52, 59, 64, 0.9);
     height: 70px;
@@ -330,6 +371,7 @@
     }
     .service {
       padding: 0px !important;
+      padding-top: 45px !important;
   }
   footer{
     text-align: center;
@@ -350,6 +392,11 @@
       line-height: 24px;
       margin-bottom: 30px;
     }
+  }
+  @media (max-width: 575px) {
+    .footer-social {
+      text-align: center !important;
+  }
   }
   
   #hero .btn-get-started {
@@ -394,82 +441,11 @@
     color: #999;
   }
 
-/*==================================
-* Author        : "ThemeSine"
-* Template Name : CarVilla  HTML Template
-* Version       : 1.0
-==================================== */
-
-/*==================================
-font-family: 'Poppins', sans-serif;
-font-family: 'Rufina', serif;
-==================================== */
-
-
-/*=========== TABLE OF CONTENTS ===========
-1.  General css (Reset code)
-2.  Top-area
-3.  Welcome-hero
-4.  Model-search
-5.  Service
-6.  New-cars
-7.  Featured-cars
-8.  Client-say
-9.  Brand
-10. Blog
-11. Contact
-==========================================*/
 
 /*-------------------------------------
 		1.General css (Reset code)
 --------------------------------------*/
-*{
-    padding: 0;
-    margin: 0;
-}
 
-*{
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	-o-box-sizing:border-box;
-	-ms-box-sizing:border-box;
-	box-sizing:border-box;
-}
-body{
-	font-family: 'Poppins', sans-serif;
-	font-size:16px;
-	color:#818998;
-    text-transform:initial;
-    max-width:1920px;
-    margin:0 auto;
-	overflow-x:hidden;
-}
-
-h1,h2,h3,h4,h5,h6 { 
-	margin: 0;
-	color:#444a57;
-    font-size: 20px;
-    font-weight: 500;
-    text-transform: capitalize;
-}
-p {
-	margin: 0;
-	color:#818998;
-	font-size:16px;
-    line-height: 1.8;
-    text-transform: initial;
-}
-img{border:none;max-width:100%; height:auto;}
-ul{
-	padding: 0;
-    margin: 0 auto;
-    list-style: none;
-}
-ul li {
-	list-style: none;
-    display: inline-block;
-	
-}
 select,input,textarea,button,.form-control{box-shadow:none;outline:0!important;}
 button {background: transparent;border: 0;font-size: 16px;text-transform: capitalize;}
 
